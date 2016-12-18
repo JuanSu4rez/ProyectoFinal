@@ -28,6 +28,15 @@ public class Scroll : MonoBehaviour {
 		Vector2 movement2 = new Vector2 (0, speedquad2*Time.time);
 		quadlvl2.GetComponent<Renderer> ().material.mainTextureOffset = movement2;
 
-		//gameObject.GetComponent<Renderer> ().material.mainTextureOffset = movement;
+	}
+
+	/*
+	void OnCollisionEnter(Collision other) {
+		Debug.Log("ENTRANDOOOOOOOOOOOOOOO");		
+	}*/
+
+	//Todo objeto que salga del collider se destruye
+	void OnCollisionExit(Collision other) {		
+			Destroy(other.gameObject);
 	}
 }
