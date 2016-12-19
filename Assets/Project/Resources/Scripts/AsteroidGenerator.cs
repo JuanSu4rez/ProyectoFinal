@@ -12,6 +12,9 @@ public class AsteroidGenerator : MonoBehaviour {
 
 	GameObject asteroid;
 
+	public AsteroidType AsteroidType;
+	public GameObject Explosion;
+
 	// Use this for initialization
 	void Start () {
 
@@ -30,6 +33,35 @@ public class AsteroidGenerator : MonoBehaviour {
 	void CreateAsteroid(){
 
 		typeAsteroid = Random.Range (1, 4);
+
+
+		// Crear proceso para Asignar el tipo de asteroide
+		//		if (typeAsteroid == 1){
+		//			AsteroidType == AsteroidType.Small;
+		//		}
+		//		else if (typeAsteroid == 2){			
+		//		AsteroidType == AsteroidType.Medium;
+		//			
+		//		}
+		//		else {
+		//		AsteroidType == AsteroidType.Large
+		//}
+
+		// Condiguracion de la Dimension del efecto de la explosion 
+		//		float emissionRate = 0f;
+		//
+		//		if (AsteroidType == AsteroidType.Large){
+		//			emissionRate = 100f;
+		//		}
+		//		else if (AsteroidType == AsteroidType.Medium){
+		//			emissionRate = 70f;
+		//		}
+		//		else {
+		//
+		//			emissionRate = 30f;
+		//		}
+
+		// Explosion.GetComponents<ParticleSystem> ().emissionRate = emissionRate;
 
 		float asteroidPosX = posX [i];
 		Vector3 asteroidVecPos = new Vector3 (asteroidPosX, gameObject.transform.position.y, gameObject.transform.position.z);
@@ -53,4 +85,13 @@ public class AsteroidGenerator : MonoBehaviour {
 		if (i == 5) 
 			i = 0;
 	}
+}
+
+
+public enum AsteroidType
+
+{ 
+	Small,
+	Medium,
+	Large
 }

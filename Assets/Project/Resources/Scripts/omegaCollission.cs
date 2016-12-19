@@ -5,6 +5,7 @@ public class omegaCollission : MonoBehaviour {
 	
 	GameObject boxCollider;
 
+
 	// Use this for initialization
 	void Start () {	
 		boxCollider = GameObject.Find ("BackGround");
@@ -22,6 +23,7 @@ public class omegaCollission : MonoBehaviour {
 			Debug.Log ("OnCollisionEnter");
 			//if (other.gameObject.name.Equals("Stone_1")) {
 				DestroyOmegaParent ();
+
 			//}
 		}
 	}
@@ -34,6 +36,7 @@ public class omegaCollission : MonoBehaviour {
 			if (other.gameObject.name.Contains("Stone")) {
 				Destroy (other.gameObject);
 				DestroyOmegaParent ();
+
 			}
 		}
 	}

@@ -5,10 +5,12 @@ public class ShotBehaviour : MonoBehaviour {
 
 	public float speedShot;
 	public GameObject BoxCollider;
+	int Puntaje = 0;
 	
 	// Use this for initialization
 	void Start () {
 		speedShot = 1;
+
 //		BoxCollider = GameObject.Find("BoxCollider").gameObject;
 	}
 	
@@ -24,9 +26,15 @@ public class ShotBehaviour : MonoBehaviour {
 		{			
 			if (other.gameObject.name.Contains("Stone")) 
 			{
+				
+
 				Destroy (other.gameObject);
+				Puntaje ++;
+				Debug.Log ("El puntaje es:" + Puntaje);
+
 			}
 			Destroy (gameObject);	
+
 		}
 	}
 
